@@ -1,0 +1,12 @@
+[debug] Other repositories:
+[debug] Default repositories:
+[debug] Using inline dependencies specified in Scala.
+[debug] Using inline dependencies specified in Scala.
+[warn] Binary version (2.11) for dependency org.scala-lang#scala-library;2.11.8
+[warn] 	in old-deps#old-deps$sources_2.10;0.1-SNAPSHOT differs from Scala binary version in project (2.10).
+[warn] Binary version (2.11) for dependency org.scala-lang#scala-compiler;2.11.0
+[warn] 	in old-deps#old-deps$sources_2.10;0.1-SNAPSHOT differs from Scala binary version in project (2.10).
+[warn] Binary version (2.11) for dependency org.scala-lang#scalap;2.11.0
+[warn] 	in old-deps#old-deps$sources_2.10;0.1-SNAPSHOT differs from Scala binary version in project (2.10).
+[warn] Binary version (2.11) for dependency org.scala-lang#scala-reflect;2.11.8
+[warn] 	in old-deps#old-deps$sources_2.10;0.1-SNAPSHOT differs from Scala binary version in project (2.10).

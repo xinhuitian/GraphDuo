@@ -1,0 +1,4 @@
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/XXH64Suite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/catalyst/src/test/java/org/apache/spark/sql/streaming/JavaOutputModeSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/HiveHasherSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/catalyst/src/test/java/org/apache/spark/sql/catalyst/expressions/RowBasedKeyValueBatchSuite.java

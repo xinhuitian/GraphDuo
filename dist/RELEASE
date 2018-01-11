@@ -1,0 +1,2 @@
+Spark 2.1.2 built for Hadoop 2.7.1
+Build flags: -Phadoop-2.7 -Dhadoop.version=2.7.1 -Phive -Phive-thriftserver

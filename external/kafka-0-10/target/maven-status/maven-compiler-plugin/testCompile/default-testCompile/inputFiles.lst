@@ -1,0 +1,4 @@
+/Users/XinhuiTian/newcode/spark-2.1.2/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaDirectKafkaStreamSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaLocationStrategySuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaConsumerStrategySuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/external/kafka-0-10/src/test/java/org/apache/spark/streaming/kafka010/JavaKafkaRDDSuite.java

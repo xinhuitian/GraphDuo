@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="207ec80d-68f4-41fc-8c2d-c569d8a16c59" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/assembly/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-common/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-shuffle/target/" />
+    <ignored path="$PROJECT_DIR$/common/sketch/target/" />
+    <ignored path="$PROJECT_DIR$/common/tags/target/" />
+    <ignored path="$PROJECT_DIR$/common/unsafe/target/" />
+    <ignored path="$PROJECT_DIR$/core/target/" />
+    <ignored path="$PROJECT_DIR$/dev/target/" />
+    <ignored path="$PROJECT_DIR$/examples/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-assembly/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-sink/target/streams/" />
+    <ignored path="$PROJECT_DIR$/external/java8-tests/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-assembly/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-sql/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8-assembly/target/" />
+    <ignored path="$PROJECT_DIR$/graphx/target/" />
+    <ignored path="$PROJECT_DIR$/launcher/target/" />
+    <ignored path="$PROJECT_DIR$/mllib/target/" />
+    <ignored path="$PROJECT_DIR$/mllib-local/target/" />
+    <ignored path="$PROJECT_DIR$/repl/target/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/streams/" />
+    <ignored path="$PROJECT_DIR$/sql/core/target/" />
+    <ignored path="$PROJECT_DIR$/sql/hive/target/" />
+    <ignored path="$PROJECT_DIR$/streaming/target/" />
+    <ignored path="$PROJECT_DIR$/tools/target/" />
+    <ignored path="$PROJECT_DIR$/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/project/target/" />
+    <ignored path="$PROJECT_DIR$/assembly/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/assembly/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-common/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-common/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-shuffle/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/network-shuffle/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/sketch/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/sketch/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/tags/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/tags/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/unsafe/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/common/unsafe/project/target/" />
+    <ignored path="$PROJECT_DIR$/core/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/core/project/target/" />
+    <ignored path="$PROJECT_DIR$/dev/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/dev/project/target/" />
+    <ignored path="$PROJECT_DIR$/examples/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/examples/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-assembly/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-assembly/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-sink/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-sink/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/java8-tests/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/java8-tests/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-assembly/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-assembly/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-sql/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-10-sql/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8-assembly/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/kafka-0-8-assembly/project/target/" />
+    <ignored path="$PROJECT_DIR$/graphx/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/graphx/project/target/" />
+    <ignored path="$PROJECT_DIR$/launcher/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/launcher/project/target/" />
+    <ignored path="$PROJECT_DIR$/mllib/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/mllib/project/target/" />
+    <ignored path="$PROJECT_DIR$/mllib-local/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/mllib-local/project/target/" />
+    <ignored path="$PROJECT_DIR$/repl/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/repl/project/target/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/project/target/" />
+    <ignored path="$PROJECT_DIR$/sql/core/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/sql/core/project/target/" />
+    <ignored path="$PROJECT_DIR$/sql/hive/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/sql/hive/project/target/" />
+    <ignored path="$PROJECT_DIR$/streaming/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/streaming/project/target/" />
+    <ignored path="$PROJECT_DIR$/tools/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/tools/project/target/" />
+    <ignored path="$PROJECT_DIR$/external/flume-sink/target/resolution-cache/" />
+    <ignored path="$PROJECT_DIR$/sql/catalyst/target/resolution-cache/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="GraphPartition.scala" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphPartition.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="268">
+                    <caret line="354" column="52" lean-forward="true" selection-start-line="354" selection-start-column="52" selection-end-line="354" selection-end-column="52" />
+                    <folding>
+                      <element signature="e#43#72#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="DeltaPageRank.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/DeltaPageRank.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="143">
+                    <caret line="14" column="85" lean-forward="true" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="SSSP.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/SSSP.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="127">
+                    <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="PageRank.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/lib/PageRank.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="110">
+                    <caret line="320" column="0" lean-forward="true" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="PageRank.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/PageRank.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="430">
+                    <caret line="87" column="26" lean-forward="false" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+                    <folding>
+                      <element signature="e#52#83#0" expanded="true" />
+                      <marker date="1515484096000" expanded="true" signature="2520:2521" ph="{...}" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Pregel.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/Pregel.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="310">
+                    <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="GraphOps.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/GraphOps.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="414">
+                    <caret line="105" column="25" lean-forward="false" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="TriangleCount.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/lib/TriangleCount.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="205">
+                    <caret line="83" column="48" lean-forward="true" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="EdgeContext.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/EdgeContext.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="403">
+                    <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Graph.scala" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/Graph.scala">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="435">
+                    <caret line="190" column="3" lean-forward="true" selection-start-line="190" selection-start-column="3" selection-end-line="190" selection-end-column="3" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="GraphImpl.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/GraphImpl.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="261" column="38" lean-forward="false" selection-start-line="261" selection-start-column="30" selection-end-line="261" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PregelSuite.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphv/enhanced/PregelSuite.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="295" column="23" lean-forward="false" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageRankSuite.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphx/lib/PageRankSuite.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphLoader.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphLoader.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VertexRDDImpl.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/VertexRDDImpl.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="158" column="27" lean-forward="false" selection-start-line="158" selection-start-column="27" selection-end-line="158" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VertexPartitionBaseOps.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/VertexPartitionBaseOps.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphImpl.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphImpl.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Graph.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/Graph.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="99" column="14" lean-forward="false" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Shuffle Read</find>
+      <find>fetchBlock</find>
+      <find>Array.copy</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/util/collection/GraphXPrimitiveKeyOpenHashMap.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/EdgeRDDImpl.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/package.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/GraphImpl.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/test/resources/spark-version-info.properties" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/ToGraphX.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/MyVertexRDDImpl.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphv/enhanced/GraphLoadSuite.scala" />
+        <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/ui/jobs/UIData.scala" />
+        <option value="$PROJECT_DIR$/common/network-common/src/main/java/org/apache/spark/network/server/OneForOneStreamManager.java" />
+        <option value="$PROJECT_DIR$/core/src/main/scala/org/apache/spark/serializer/JavaSerializer.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphPartitonBuilder.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/VertexContext.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/RoutingTable.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/Pregel.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphGenerators.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphx/lib/ConnectedComponentsSuite.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/lib/TriangleCount.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/lib/StronglyConnectedComponents.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphv/PregelSuite.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/MyPregel.scala" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/DeltaPageRank.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/EdgePartition.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/ReplicatedVertexView.scala" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/Diameter.scala" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/SSSP.scala" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/BFS.scala" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/CC.scala" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/DeltaPageRank.scala" />
+        <option value="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/PageRank.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphLoader.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphPartition.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphImpl.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphv/enhanced/PregelSuite.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/Graph.scala" />
+        <option value="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/Pregel.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1344" />
+    <option name="height" value="812" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="graphx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="graphx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="graphx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="graphx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="graphx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="spark" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="graphx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="spark" type="462c0819:PsiDirectoryNode" />
+              <item name="graphv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spark-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-2.1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="graphx" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="spark" type="462c0819:PsiDirectoryNode" />
+              <item name="graphv" type="462c0819:PsiDirectoryNode" />
+              <item name="enhanced" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.50574714" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples" />
+      <recent name="$PROJECT_DIR$/graphx/src/test/resources" />
+      <recent name="$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark" />
+      <recent name="$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="ScalaTest.PregelSuite.PageRank">
+    <configuration name="PregelSuite.DeltaPageRank (1)" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="graphx" />
+      <setting name="path" value="org.apache.spark.graphv.PregelSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="DeltaPageRank" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+    </configuration>
+    <configuration name="PregelSuite.DeltaPageRank" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="graphx" />
+      <setting name="path" value="org.apache.spark.graphv.enhanced.PregelSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="DeltaPageRank" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+    </configuration>
+    <configuration name="PregelSuite.PageRank" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="graphx" />
+      <setting name="path" value="org.apache.spark.graphv.enhanced.PregelSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="PageRank" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+    </configuration>
+    <configuration name="PregelSuite.SSSP (1)" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="graphx" />
+      <setting name="path" value="org.apache.spark.graphv.PregelSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="SSSP" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+    </configuration>
+    <configuration name="PregelSuite.SSSP" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="graphx" />
+      <setting name="path" value="org.apache.spark.graphv.enhanced.PregelSuite" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="SSSP" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.SSSP" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.SSSP (1)" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.DeltaPageRank" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.DeltaPageRank (1)" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.PageRank" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.PageRank" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.SSSP" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.DeltaPageRank (1)" />
+        <item index="3" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.DeltaPageRank" />
+        <item index="4" class="java.lang.String" itemvalue="ScalaTest.PregelSuite.SSSP (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="lastUpdateTimestamp" value="1514089023214" />
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="spark-parent" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="spark" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="assembly" />
+                <option name="path" value="$PROJECT_DIR$/assembly" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="network-common" />
+                <option name="path" value="$PROJECT_DIR$/common/network-common" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="network-shuffle" />
+                <option name="path" value="$PROJECT_DIR$/common/network-shuffle" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="sketch" />
+                <option name="path" value="$PROJECT_DIR$/common/sketch" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="tags" />
+                <option name="path" value="$PROJECT_DIR$/common/tags" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="unsafe" />
+                <option name="path" value="$PROJECT_DIR$/common/unsafe" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="core" />
+                <option name="path" value="$PROJECT_DIR$/core" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="oldDeps" />
+                <option name="path" value="$PROJECT_DIR$/dev" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="examples" />
+                <option name="path" value="$PROJECT_DIR$/examples" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-flume" />
+                <option name="path" value="$PROJECT_DIR$/external/flume" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-flume-assembly" />
+                <option name="path" value="$PROJECT_DIR$/external/flume-assembly" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-flume-sink" />
+                <option name="path" value="$PROJECT_DIR$/external/flume-sink" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="java8-tests" />
+                <option name="path" value="$PROJECT_DIR$/external/java8-tests" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-10" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-10" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-10-assembly" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-10-assembly" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="sql-kafka-0-10" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-10-sql" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-8" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-8" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-8-assembly" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-8-assembly" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="graphx" />
+                <option name="path" value="$PROJECT_DIR$/graphx" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="launcher" />
+                <option name="path" value="$PROJECT_DIR$/launcher" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="mllib" />
+                <option name="path" value="$PROJECT_DIR$/mllib" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="mllib-local" />
+                <option name="path" value="$PROJECT_DIR$/mllib-local" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="repl" />
+                <option name="path" value="$PROJECT_DIR$/repl" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="catalyst" />
+                <option name="path" value="$PROJECT_DIR$/sql/catalyst" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="sql" />
+                <option name="path" value="$PROJECT_DIR$/sql/core" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="hive" />
+                <option name="path" value="$PROJECT_DIR$/sql/hive" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming" />
+                <option name="path" value="$PROJECT_DIR$/streaming" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="tools" />
+                <option name="path" value="$PROJECT_DIR$/tools" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="spark-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="assembly-build" />
+                <option name="path" value="$PROJECT_DIR$/assembly/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="network-common-build" />
+                <option name="path" value="$PROJECT_DIR$/common/network-common/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="network-shuffle-build" />
+                <option name="path" value="$PROJECT_DIR$/common/network-shuffle/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="sketch-build" />
+                <option name="path" value="$PROJECT_DIR$/common/sketch/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="tags-build" />
+                <option name="path" value="$PROJECT_DIR$/common/tags/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="unsafe-build" />
+                <option name="path" value="$PROJECT_DIR$/common/unsafe/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="core-build" />
+                <option name="path" value="$PROJECT_DIR$/core/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="oldDeps-build" />
+                <option name="path" value="$PROJECT_DIR$/dev/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="examples-build" />
+                <option name="path" value="$PROJECT_DIR$/examples/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-flume-build" />
+                <option name="path" value="$PROJECT_DIR$/external/flume/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-flume-assembly-build" />
+                <option name="path" value="$PROJECT_DIR$/external/flume-assembly/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-flume-sink-build" />
+                <option name="path" value="$PROJECT_DIR$/external/flume-sink/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="java8-tests-build" />
+                <option name="path" value="$PROJECT_DIR$/external/java8-tests/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-10-build" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-10/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-10-assembly-build" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-10-assembly/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="sql-kafka-0-10-build" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-10-sql/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-8-build" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-8/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-kafka-0-8-assembly-build" />
+                <option name="path" value="$PROJECT_DIR$/external/kafka-0-8-assembly/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="graphx-build" />
+                <option name="path" value="$PROJECT_DIR$/graphx/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="launcher-build" />
+                <option name="path" value="$PROJECT_DIR$/launcher/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="mllib-build" />
+                <option name="path" value="$PROJECT_DIR$/mllib/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="mllib-local-build" />
+                <option name="path" value="$PROJECT_DIR$/mllib-local/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="repl-build" />
+                <option name="path" value="$PROJECT_DIR$/repl/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="catalyst-build" />
+                <option name="path" value="$PROJECT_DIR$/sql/catalyst/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="sql-build" />
+                <option name="path" value="$PROJECT_DIR$/sql/core/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="hive-build" />
+                <option name="path" value="$PROJECT_DIR$/sql/hive/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="streaming-build" />
+                <option name="path" value="$PROJECT_DIR$/streaming/project" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="tools-build" />
+                <option name="path" value="$PROJECT_DIR$/tools/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../scala-concurrency-examples" value="1486524125000" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="207ec80d-68f4-41fc-8c2d-c569d8a16c59" name="Default" comment="" />
+      <created>1514088524616</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1514088524616</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="PregelSuite_PageRank - 2018.01.10 at 11h 35m 02s.xml">
+      <configuration name="PregelSuite.PageRank" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 05m 10s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 06m 05s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 13m 30s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 16m 48s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 18m 38s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 25m 04s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 26m 20s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 27m 59s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="PregelSuite_SSSP - 2018.01.08 at 15h 29m 13s.xml">
+      <configuration name="PregelSuite.SSSP" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="821" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25951558" sideWeight="0.5099846" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25107297" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997155" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25648415" sideWeight="0.4938556" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4110953" sideWeight="0.49001536" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296433" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22460657" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36129034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/src.zip!/java/io/Serializable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="168" column="17" lean-forward="false" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.8-sources.jar!/scala/Serializable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.esotericsoftware/kryo-shaded/srcs/kryo-shaded-3.0.3-sources.jar!/com/esotericsoftware/kryo/Kryo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="612" column="36" lean-forward="true" selection-start-line="612" selection-start-column="36" selection-end-line="612" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/serializer/KryoSerializer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="206" column="19" lean-forward="false" selection-start-line="206" selection-start-column="19" selection-end-line="206" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/src.zip!/java/io/ObjectOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="1219" column="17" lean-forward="false" selection-start-line="1219" selection-start-column="17" selection-end-line="1219" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/serializer/JavaSerializer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+          <folding>
+            <element signature="e#839#855#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.esotericsoftware/kryo-shaded/srcs/kryo-shaded-3.0.3-sources.jar!/com/esotericsoftware/kryo/Registration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+          <folding>
+            <element signature="e#2497#2498#0" expanded="false" />
+            <element signature="e#2521#2522#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/serializer/Serializer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="134" column="6" lean-forward="false" selection-start-line="134" selection-start-column="6" selection-end-line="134" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/storage/DiskBlockObjectWriter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="238" column="28" lean-forward="true" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/util/collection/ExternalSorter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="708" column="24" lean-forward="false" selection-start-line="708" selection-start-column="19" selection-end-line="708" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/shuffle/IndexShuffleBlockResolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="135" column="6" lean-forward="false" selection-start-line="135" selection-start-column="6" selection-end-line="135" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/executor/TaskMetrics.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2078">
+          <caret line="163" column="27" lean-forward="false" selection-start-line="163" selection-start-column="27" selection-end-line="163" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/executor/ShuffleWriteMetrics.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="49" column="31" lean-forward="false" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/MyVertexPartition.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="297" column="87" lean-forward="true" selection-start-line="297" selection-start-column="87" selection-end-line="297" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/MyGraph.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/MyGraphImpl.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphPartitonBuilder.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="261" column="53" lean-forward="true" selection-start-line="261" selection-start-column="53" selection-end-line="261" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/RoutingTable.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="93" column="6" lean-forward="false" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphv/PregelSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="123" column="20" lean-forward="false" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/SSSP.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="64" column="14" lean-forward="true" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/scala/org/apache/spark/shuffle/sort/SortShuffleWriter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphx/PageRankExample.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/DeltaPageRank.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="54" column="50" lean-forward="true" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphx/PregelSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="34" column="3" lean-forward="false" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphx/EdgeSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphx/EdgeRDDSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphx/lib/PageRankSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/ReplicatedVertexView.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/BFS.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="47" column="88" lean-forward="true" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/CC.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="47" column="46" lean-forward="true" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/SSSP.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/EdgePartition.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="91" column="49" lean-forward="true" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/GraphLoader.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/DeltaPageRank.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="14" column="85" lean-forward="true" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/Diameter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/GraphOps.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="105" column="25" lean-forward="false" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/VertexRDDImpl.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="158" column="27" lean-forward="false" selection-start-line="158" selection-start-column="27" selection-end-line="158" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/VertexPartitionBaseOps.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/VertexRDD.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="179" column="46" lean-forward="false" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/impl/GraphImpl.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="261" column="38" lean-forward="false" selection-start-line="261" selection-start-column="30" selection-end-line="261" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/Graph.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="190" column="3" lean-forward="true" selection-start-line="190" selection-start-column="3" selection-end-line="190" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/lib/PageRank.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="320" column="0" lean-forward="true" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/EdgeContext.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphx/lib/TriangleCount.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="83" column="48" lean-forward="true" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/test/scala/org/apache/spark/graphv/enhanced/PregelSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="295" column="23" lean-forward="false" selection-start-line="295" selection-start-column="23" selection-end-line="295" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/Graph.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="99" column="14" lean-forward="false" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/src/main/scala/org/apache/spark/examples/graphv/enhanced/PageRank.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="87" column="26" lean-forward="false" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+          <folding>
+            <element signature="e#52#83#0" expanded="true" />
+            <marker date="1515484096000" expanded="true" signature="2520:2521" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/Pregel.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphPartition.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="354" column="52" lean-forward="true" selection-start-line="354" selection-start-column="52" selection-end-line="354" selection-end-column="52" />
+          <folding>
+            <element signature="e#43#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphImpl.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphx/src/main/scala/org/apache/spark/graphv/enhanced/GraphLoader.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.11.4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.50574714" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.50574714" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>graphx</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.50574714" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>SBT: antlr:antlr:2.7.7:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.50574714" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

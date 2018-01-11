@@ -1,0 +1,8 @@
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/JavaAPISuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/JavaWriteAheadLogSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/JavaTimeSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/JavaStreamingListenerAPISuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/JavaDurationSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/JavaMapWithStateSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/JavaReceiverAPISuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/streaming/src/test/java/org/apache/spark/streaming/LocalJavaStreamingContext.java

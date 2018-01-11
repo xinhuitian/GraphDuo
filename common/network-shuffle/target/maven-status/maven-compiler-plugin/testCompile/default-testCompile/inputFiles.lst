@@ -1,0 +1,10 @@
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleBlockResolverSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleSecuritySuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/BlockTransferMessagesSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleBlockHandlerSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/sasl/SaslIntegrationSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleCleanupSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/OneForOneBlockFetcherSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/ExternalShuffleIntegrationSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/RetryingBlockFetcherSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/common/network-shuffle/src/test/java/org/apache/spark/network/shuffle/TestShuffleDataContext.java

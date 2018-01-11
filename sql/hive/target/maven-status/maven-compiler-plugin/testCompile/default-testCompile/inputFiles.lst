@@ -1,0 +1,14 @@
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToIntIntMap.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/JavaDataFrameSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFIntegerToString.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/test/Complex.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToListString.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFListListInt.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToStringIntMap.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFTwoListList.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/aggregate/MyDoubleAvg.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFStringString.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/JavaMetastoreDataSourcesSuite.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/aggregate/MyDoubleSum.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFToListInt.java
+/Users/XinhuiTian/newcode/spark-2.1.2/sql/hive/src/test/java/org/apache/spark/sql/hive/execution/UDFListString.java

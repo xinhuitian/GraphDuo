@@ -1,0 +1,8 @@
+[info] scalastyle using config /Users/XinhuiTian/newcode/spark-2.1.2/scalastyle-on-compile.generated.xml
+[debug] Starting scalastyle
+[info] Processed 0 file(s)
+[info] Found 0 errors
+[info] Found 0 warnings
+[info] Found 0 infos
+[info] Finished in 25 ms
+[success] created output: /Users/XinhuiTian/newcode/spark-2.1.2/target
