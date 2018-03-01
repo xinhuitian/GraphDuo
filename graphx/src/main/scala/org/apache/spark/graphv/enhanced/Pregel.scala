@@ -26,9 +26,15 @@ object Pregel extends Logging {
     var g = graph.mapVertices((vid, v) => initialFunc(vid, v), needActive)
       .mapMirrors((vid, v) => initialFunc(vid, v)).cache()
 
-    val vertNum = g.vertices.count()
+    var edgeNum: Long = 0
+    if (edgeFilter == true) {
+      edgeNum = g.partitionsRDD.mapPartitions(_.map(_._2.edgeSize)).sum().toLong
+    }
+    // val vertNum = g.vertices.count()
 
     var edgeCentric: Boolean = false
+    var needInit: Boolean = false
+    var firstInit: Boolean = true
 
     // g.vertices.foreach(println)
 
@@ -38,8 +44,8 @@ object Pregel extends Logging {
     }
     */
 
-    var activeNums = g.getActiveNums
-    println("activeNums: " + activeNums)
+    var activeNums = g.getActiveEdgeNums
+    println("activeEdgeNums: " + activeNums)
 
     var prevG: Graph[VD, ED] = null
     var i = 0
@@ -49,7 +55,7 @@ object Pregel extends Logging {
       prevG = g
 
       if (edgeFilter == true) {
-        if (activeNums > vertNum / 10) {
+        if (activeNums > edgeNum / 20) {
           println("Open edgeCentric")
           edgeCentric = true
         } else {
@@ -59,15 +65,15 @@ object Pregel extends Logging {
       }
 
       g = prevG.mapReduceTriplets(sendMsg, mergeMsg, vFunc,
-        activeDirection, needActive, edgeCentric)
+        activeDirection, needActive, edgeCentric, needInit)
         .cache()
 
       // g.vertices.foreach(println)
-      activeNums = g.getActiveNums
+      activeNums = g.getActiveEdgeNums
+      println("totalMsgs: " + g.getTotalMsgs + " noDupMsgs: " + g.getTotalNoDupMsgs)
       // println(g.vertices.map(_._2).asInstanceOf[RDD[Double]].sum())
       println ("iteration  " + i + "  It took %d ms count message"
         .format (System.currentTimeMillis - jobStartTime))
-
 
       prevG.unpersist(blocking = false)
       i += 1

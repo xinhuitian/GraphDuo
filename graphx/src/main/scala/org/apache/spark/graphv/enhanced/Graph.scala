@@ -5,7 +5,6 @@ import scala.reflect.ClassTag
 
 import org.apache.spark._
 import org.apache.spark.graphv._
-import org.apache.spark.graphx.TripletFields
 import org.apache.spark.rdd.RDD
 import org.apache.spark.storage.StorageLevel
 
@@ -35,7 +34,13 @@ abstract class Graph[VD: ClassTag, ED: ClassTag](
 
   def edgeSize: Int
 
-  def getActiveNums: Long
+  def getActiveVertexNums: Long
+
+  def getActiveEdgeNums: Long
+
+  def getTotalMsgs: Long
+
+  def getTotalNoDupMsgs: Long
 
   def activateAllMasters: Graph[VD, ED]
 
@@ -47,6 +52,17 @@ abstract class Graph[VD: ClassTag, ED: ClassTag](
 
   // used for mirror init
   def mapMirrors(f: (VertexId, VD) => VD): Graph[VD, ED]
+
+  def joinVertices[U: ClassTag](table: RDD[LocalFinalMessages[U]])(mapFunc: (VertexId, VD, U) => VD)
+  : Graph[VD, ED] = {
+    val uf = (id: VertexId, data: VD, o: Option[U]) => {
+      o match {
+        case Some(u) => mapFunc(id, data, u)
+        case None => data
+      }
+    }
+    this.localOuterJoin(table, false)(uf)
+  }
 
   def localOuterJoin[VD2: ClassTag]
   (other: RDD[LocalFinalMessages[VD2]], needActive: Boolean)
@@ -61,7 +77,8 @@ abstract class Graph[VD: ClassTag, ED: ClassTag](
       activeEdgeDirection: EdgeDirection = EdgeDirection.Out,
       // tripletFields: TripletFields,
       needActive: Boolean = false,
-      edgeFilter: Boolean = false): Graph[VD, ED] = {
+      edgeFilter: Boolean = false,
+      needInit: Boolean = false): Graph[VD, ED] = {
     def sendMsg(ctx: VertexContext[VD, ED, A]) {
       // println(ctx.srcAttr, ctx.dstAttr)
       mapFunc (ctx.toEdgeTriplet).foreach { kv =>
@@ -105,6 +122,16 @@ abstract class Graph[VD: ClassTag, ED: ClassTag](
       // tripletFields: TripletFields,
       needActive: Boolean = false,
       edgeFilter: Boolean = false): Graph[VD, ED]
+
+  def computeEdgeCentric[A: ClassTag](
+      sendMsg: VertexContext[VD, ED, A] => Unit,
+      mergeMsg: (A, A) => A,
+      vFunc: (VertexId, VD, A) => VD,
+      edgeDirection: EdgeDirection,
+      // tripletFields: TripletFields,
+      needActive: Boolean = true,
+      useSrc: Boolean = true,
+      useDst: Boolean = true): Graph[VD, ED]
 
   def aggregateLocalMessages[A: ClassTag](
       sendMsg: VertexContext[VD, ED, A] => Unit,
@@ -203,4 +230,11 @@ abstract class Graph[VD: ClassTag, ED: ClassTag](
 
   def withPartitionsRDD[VD2: ClassTag, ED2: ClassTag](
       partitionsRDD: RDD[(Int, GraphPartition[VD2, ED2])]): Graph[VD2, ED2]
+
+  val ops = new GraphOps(this)
+}
+
+object Graph {
+  implicit def graphToGraphOps[VD: ClassTag, ED: ClassTag]
+  (g: Graph[VD, ED]): GraphOps[VD, ED] = g.ops
 }

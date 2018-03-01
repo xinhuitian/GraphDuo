@@ -18,10 +18,22 @@ class GraphImpl[VD: ClassTag, ED: ClassTag] protected(
   extends Graph[VD, ED](partitionsRDD.context,
     List (new OneToOneDependency (partitionsRDD))) with Serializable with Logging {
 
-  override def getActiveNums: Long = partitionsRDD.mapPartitions { iter =>
+  override def getActiveVertexNums: Long = partitionsRDD.mapPartitions { iter =>
     val (pid, part) = iter.next()
     // println(part.getActiveNum)
     Iterator(part.getActiveNum)
+  }.reduce(_ + _)
+
+  override def getActiveEdgeNums: Long = partitionsRDD.mapPartitions { iter =>
+    iter.map(_._2.getActiveEdgeNum)
+  }.reduce(_ + _)
+
+  override def getTotalMsgs: Long = partitionsRDD.mapPartitions { iter =>
+    iter.map(_._2.getTotalMsgs)
+  }.reduce(_ + _)
+
+  override def getTotalNoDupMsgs: Long = partitionsRDD.mapPartitions { iter =>
+    iter.map(_._2.getTotalNoDupMsgs)
   }.reduce(_ + _)
 
   override def activateAllMasters: GraphImpl[VD, ED] = {
@@ -284,7 +296,7 @@ class GraphImpl[VD: ClassTag, ED: ClassTag] protected(
             edgeDirection, needActive)
         } else {
           computeEdgeCentric (sendMsg, mergeMsg, vFunc,
-            edgeDirection, needActive)
+            edgeDirection, needActive, true, true)
         }
 
       case _ =>
@@ -367,15 +379,17 @@ class GraphImpl[VD: ClassTag, ED: ClassTag] protected(
       graphPart.aggregateMessagesVertexCentric(sendMsg, mergeMsg)
     }.partitionBy(new HashPartitioner(this.getNumPartitions))
 
-    // preAgg.cache()
-
-    // preAgg.count()
     /*
+    preAgg.cache()
+
+    preAgg.count()
+
     val totalMessages = preAgg.mapPartitions { partIter =>
       val (pid, part) = partIter.next()
       Iterator(part.syncIterator.length + part.msgIterator.length)
     }.sum()
     */
+
 
     // println("Total Messages: " + totalMessages)
 
@@ -393,13 +407,14 @@ class GraphImpl[VD: ClassTag, ED: ClassTag] protected(
     val newPartitionsRDD = partitionsRDD.zipPartitions(preAgg) { (parts, aggMsgs) =>
       val (pid, part) = parts.next()
       // println("GenerateFinalMsgs")
-      val startTime = System.currentTimeMillis()
+      // val startTime = System.currentTimeMillis()
       val localMsgs = part.generateFinalMsgs(aggMsgs)(sendMsg, mergeMsg)
-      val midTime = System.currentTimeMillis()
+      // val midTime = System.currentTimeMillis()
       // println("GenerateMsg Time: " + (midTime - startTime))
       // localMsgs.foreach(println )
-      Iterator((pid, part.localLeftJoin(localMsgs, needActive)(uf)))
+      val newPart = Iterator((pid, part.localLeftJoin(localMsgs, needActive)(uf)))
       // println("Join Time: "+ (System.currentTimeMillis() - midTime))
+      newPart
       // msgs
     }.cache()
 
@@ -410,21 +425,35 @@ class GraphImpl[VD: ClassTag, ED: ClassTag] protected(
     new GraphImpl(newPartitionsRDD)
   }
 
-  def computeEdgeCentric[A: ClassTag](
+  override def computeEdgeCentric[A: ClassTag](
       sendMsg: VertexContext[VD, ED, A] => Unit,
       mergeMsg: (A, A) => A,
       vFunc: (VertexId, VD, A) => VD,
       edgeDirection: EdgeDirection,
       // tripletFields: TripletFields,
-      needActive: Boolean = true): Graph[VD, ED] = {
+      needActive: Boolean = true,
+      useSrc: Boolean = true,
+      useDst: Boolean = true): Graph[VD, ED] = {
 
     partitionsRDD.cache()
 
+    /*
+    if (needInit == true) {
+      println("first time open")
+      partitionsRDD.mapPartitions { partIter =>
+        val (_, part) = partIter.next()
+        part.generateSyncMsgsWithInit()
+      }.partitionBy(this.partitioner.get)
+    } else {
+    */
+    val syncMsgs =
+      partitionsRDD.mapPartitions { partIter =>
+        val (_, part) = partIter.next()
+        part.generateSyncMsgs(useSrc, useDst)
+      }.partitionBy(this.partitioner.get)
+
     // 1. sync mirrors
-    val syncMsgs = partitionsRDD.mapPartitions { partIter =>
-      val (_, part) = partIter.next()
-      part.generateSyncMsgs()
-    }.partitionBy(this.partitioner.get)
+    // val syncMsgs =
 
     // println("sync messages: " + syncMsgs.count())
 
@@ -432,15 +461,22 @@ class GraphImpl[VD: ClassTag, ED: ClassTag] protected(
     val newPartitions = partitionsRDD.zipPartitions(syncMsgs) {
       (partIter, msgIter) =>
       val (pid, part) = partIter.next ()
+      //  val startTime = System.currentTimeMillis()
       val msgs = msgIter.flatMap (_._2.iterator)
       val newPart = part.syncMirrors (msgs)
+      //  val endTime = System.currentTimeMillis()
+      //  println("Sync cost time: " + (endTime - startTime))
       Iterator((pid, newPart))
     }.cache()
 
     // 3. generate messages for masters
     val preAgg = newPartitions.mapPartitions { partIter =>
       val (pid, part) = partIter.next()
-      part.aggregateMessagesEdgeCentric(sendMsg, mergeMsg, edgeDirection)
+      // val startTime = System.currentTimeMillis()
+      val messages = part.aggregateMessagesEdgeCentric(sendMsg, mergeMsg, edgeDirection)
+      // val endTime = System.currentTimeMillis()
+      // println("Sync cost time: " + (endTime - startTime))
+      messages
     }.partitionBy(this.partitioner.get)
 
     val uf = (id: VertexId, data: VD, o: Option[A]) => {
@@ -526,7 +562,7 @@ class GraphImpl[VD: ClassTag, ED: ClassTag] protected(
       val (pid, part) = partIter.next()
       val finalMessages = otherIter.next()
       Iterator((pid, part.localLeftJoin(finalMessages, needActive)(updateF)))
-    }.cache()
+    }
     // newPartitionsRDD.foreach(p => p._2.activeSet.iterator.foreach(println))
 
     this.withPartitionsRDD(newPartitionsRDD)
@@ -617,6 +653,8 @@ object GraphImpl {
     val partitioner = new HashPartitioner(numPartitions)
 
     // get the edges needed to be repartitioned
+
+    val edgeNums = newEdges.map(v => (v._1, v._2.length))
     val localEdges = newEdges.filter(_._2.length <= degreeThreshold)
 
     val exchangeEdges = newEdges
@@ -650,7 +688,7 @@ object GraphImpl {
         val dstIds = v._2.toArray
         (srcId, dstIds)
       }))
-    }.zipPartitions(localEdges) { (remoteEdgesIter, localEdges) =>
+    }.zipPartitions(localEdges, edgeNums) { (remoteEdgesIter, localEdges, edgeNumsIter) =>
       val (pid, remoteEdges) = remoteEdgesIter.next
       println("this pid: " + pid)
       val graphPartitionBuilder = new GraphPartitonBuilder[VD](
@@ -659,7 +697,7 @@ object GraphImpl {
       // edges.foreach(println)
       // println("remoteEdges: ")
       // remoteEdges.foreach(println)
-      graphPartitionBuilder.add(localEdges, remoteEdges)
+      graphPartitionBuilder.add(localEdges, remoteEdges, edgeNumsIter)
       Iterator((pid, graphPartitionBuilder.toGraphPartition(pid)))
     }
 

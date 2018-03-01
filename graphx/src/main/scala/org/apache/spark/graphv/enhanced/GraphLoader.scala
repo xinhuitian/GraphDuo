@@ -28,27 +28,23 @@ object GraphLoader {
       }
 
     // using cache cause longer time?
-    val filteredLines = lines.filter(line => !line.isEmpty && line(0) != '#')
-
+    val filteredLines = lines.filter(line => !line.isEmpty && line(0) != '#' && line(0) != '%')
 
     val mid_data = filteredLines
       .map { line =>
         val parts = line.split ("\\s+")
         (parts(0).toLong, parts(1).toLong)}
       .filter(e => e._1 != e._2) // do not consider self edge by defaults
-      .flatMap (e => {
+      .flatMap { e =>
         val srcId = e._1
         val dstId = e._2
-        if (canonicalOrientation) {
-          if (srcId > dstId) {
+          if (canonicalOrientation && srcId > dstId) {
             Iterator ((dstId, srcId), (srcId, -1L))
-          } else if (srcId < dstId) {
+          } else {
             Iterator ((srcId, dstId), (dstId, -1L))
           }
-        }
         // srcId must have an edge, do not need a -1 flag to build vertex
-        Iterator ((srcId, dstId), (dstId, -1L))
-    })
+      }
 
     // mid_data.foreach(println)
 

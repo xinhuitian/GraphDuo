@@ -13,6 +13,7 @@ class GraphPartitonBuilder[@specialized (Long, Int, Double) VD: ClassTag]
 
   private[this] var localVertices: Array[(Long, Array[Long])] = Array.empty[(Long, Array[Long])]
   private[this] var remoteVertices: Array[(Long, Array[Long])] = Array.empty[(Long, Array[Long])]
+  private[this] var edgeNums: Array[(VertexId, Int)] = Array.empty[(VertexId, Int)]
   private[this] var indexedVertSize = 0
   private[this] var vertSize = 0
 
@@ -21,10 +22,13 @@ class GraphPartitonBuilder[@specialized (Long, Int, Double) VD: ClassTag]
   val helperPartitioner = new HashPartitioner(numPartitions)
 
   /** Add a new edge to the partition. */
-  def add(locals: Iterator[(Long, Array[Long])], remotes: Iterator[(Long, Array[Long])]) {
+  def add(locals: Iterator[(Long, Array[Long])],
+      remotes: Iterator[(Long, Array[Long])],
+      edges: Iterator[(Long, Int)]) {
 
     localVertices = locals.toArray
     remoteVertices = remotes.toArray
+    edgeNums = edges.toArray
     // vertexSize += v._2.size - 1
   }
 
@@ -264,12 +268,14 @@ class GraphPartitonBuilder[@specialized (Long, Int, Double) VD: ClassTag]
     val active = new BitSet (vertSize)
     active.setUntil (vertSize)
     val edgeAttrs = new Array[Int](localDstIds.length)
+    val masterEdgeNums = new Array[Int](masterSize)
+    edgeNums.foreach (e => masterEdgeNums(global2local(e._1)) = e._2)
 
     new GraphPartition (
       localDstIds, Array.fill[VD](masterSize)(defaultVertexValue),
       Array.fill[VD](mirrorSize)(defaultVertexValue),
-      index, edgeAttrs, global2local, local2global.trim ().array, indexStartPos,
-      smallDegreeEndPos, pureMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, null.asInstanceOf[RoutingTable], active)
+      index, edgeAttrs, global2local, local2global.trim ().array, masterEdgeNums,
+      indexStartPos, smallDegreeEndPos, pureMirrorEndPos, largeDegreeMasterEndPos,
+      null.asInstanceOf[RoutingTable], active)
   }
 }

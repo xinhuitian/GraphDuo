@@ -54,7 +54,9 @@ VD: ClassTag, A: ClassTag](
 
 class LocalFinalMessages[VD: ClassTag](
     val values: Array[VD],
-    val mask: BitSet) extends Serializable {
+    val mask: BitSet,
+    var totalMsgs: Long = 0,
+    val noDupMsgs: Array[Int] = Array.empty[Int]) extends Serializable {
   def iterator: Iterator[(Int, VD)] =
     mask.iterator.map (ind => (ind, values (ind)))
 }
@@ -86,6 +88,7 @@ class GraphPartition[
     // layout: |SDVertices | mirrorsForRemoteLDMasters | mixMasters | LDMasters
     // | otherNeighbors
     val local2global: Array[VertexId],
+    val masterEdgeNum: Array[Int],
     // structures for mirrors
     // val dstIdsForRemote: Array[Int],
     // val remoteEdgeAttrs: Array[ED],
@@ -95,7 +98,6 @@ class GraphPartition[
     val smallDegreeEndPos: Int,
     val largeDegreeMirrorEndPos: Int,
     val largeDegreeMasterEndPos: Int,
-    val numPartitions: Int,
     val routingTable: RoutingTable,
     val activeSet: BitSet)
   extends Serializable {
@@ -116,7 +118,15 @@ class GraphPartition[
 
   def totalVertSize: Int = local2global.size
 
-  val thisPid: Int = new HashPartitioner(numPartitions).getPartition(local2global(0))
+  def numPartitions: Int = routingTable.numPartitions
+
+  var totalMsgs: Long = 0L
+  var totalNoDupMsgs: Long = 0L
+
+  def getTotalMsgs: Long = totalMsgs
+  def getTotalNoDupMsgs: Long = totalNoDupMsgs
+
+  // val thisPid: Int = new HashPartitioner(numPartitions).getPartition(local2global(0))
 
   def iterator: Iterator[(VertexId, VD)] = local2global.zipWithIndex
     .filter(v => v._2 < masterSize)
@@ -177,6 +187,12 @@ class GraphPartition[
 
   def getActiveNum: Long = activeSet.iterator.filter(_ < masterSize).length
 
+  def getActiveEdgeNum: Long = {
+    val edgeNum = activeSet.iterator.filter(_ < masterSize)
+      .map{v => masterEdgeNum(v)} ++ Iterator(0)
+    edgeNum.reduce(_ + _)
+  }
+
   // used for computation init and vertices changing
   def mapVertices[VD2: ClassTag](
       f: (VertexId, VD) => VD2,
@@ -197,9 +213,9 @@ class GraphPartition[
 
     new GraphPartition[VD2, ED](localDstIds, newValues,
       Array.fill[VD2](mirrorSize)(null.asInstanceOf[VD2]),
-      vertexIndex, edgeAttrs, global2local, local2global, indexStartPos,
+      vertexIndex, edgeAttrs, global2local, local2global, masterEdgeNum, indexStartPos,
       smallDegreeEndPos, largeDegreeMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, routingTable, activeSet)
+      routingTable, activeSet)
   }
 
   def mapMirrors(f: (VertexId, VD) => VD): GraphPartition[VD, ED] = {
@@ -230,9 +246,9 @@ class GraphPartition[
     }
 
     new GraphPartition[VD, ED2](localDstIds, masterAttrs, mirrorAttrs,
-      vertexIndex, newData, global2local, local2global, indexStartPos,
+      vertexIndex, newData, global2local, local2global, masterEdgeNum, indexStartPos,
       smallDegreeEndPos, largeDegreeMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, routingTable, activeSet)
+      routingTable, activeSet)
   }
 
   def mapTriplets[ED2: ClassTag](f: GraphVEdgeTriplet[VD, ED] => ED2)
@@ -260,9 +276,9 @@ class GraphPartition[
     }
 
     new GraphPartition[VD, ED2](localDstIds, masterAttrs, mirrorAttrs,
-      vertexIndex, newData, global2local, local2global, indexStartPos,
+      vertexIndex, newData, global2local, local2global, masterEdgeNum, indexStartPos,
       smallDegreeEndPos, largeDegreeMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, routingTable, activeSet)
+      routingTable, activeSet)
   }
 
   def joinLocalMsgs[A: ClassTag](localMsgs: Iterator[(Int, A)])(
@@ -300,6 +316,8 @@ class GraphPartition[
       localMsgs(v._1) = Some(v._2)
     }
     */
+    var totalNoDupMsgs = 0L
+    var totalMsgs = 0L
 
     // only the master vertices
     for (i <- 0 until masterSize) {
@@ -311,23 +329,30 @@ class GraphPartition[
     if (needActive) {
       for (i <- 0 until masterSize) {
         if (masterAttrs (i) != newValues (i)) {
+          totalNoDupMsgs += other.noDupMsgs(i)
           activeSet.set (i)
         } else { // already considering the None case
           activeSet.unset (i)
         }
       }
-      for (i <- masterSize until totalVertSize) {
+      // unset all mirrors
+      for (i <- masterSize until masterSize + mirrorSize) {
         activeSet.unset(i)
       }
     }
 
-    this.withNewValues(newValues).withActiveSet(activeSet)
+    val newPart = this.withNewValues(newValues).withActiveSet(activeSet)
+    // required to compute NoDupMsgs
+    newPart.totalMsgs = other.totalMsgs
+    newPart.totalNoDupMsgs = totalNoDupMsgs
+    newPart
   }
 
   // send mirrors to the master pids to build routing tables
   def shipMirrors: Iterator[(VertexId, Int)] = mirrorIterator.map(v => (local2global(v), v))
 
   // functions for undirected graphs
+  /*
   def sendRequests: Iterator[(VertexId, Int)] = {
     var pos = activeSet.nextSetBit(indexStartPos)
     val requests = new BitSet(totalVertSize)
@@ -349,6 +374,7 @@ class GraphPartition[
 
     requests.iterator.map (localId => (local2global(localId), thisPid))
   }
+  */
 
   def syncMirrors(msgs: Iterator[(Int, VD)]): GraphPartition[VD, ED] = {
     // require(vertexAttrSize == totalVertSize) // must create spaces for all mirrors
@@ -382,17 +408,26 @@ class GraphPartition[
     newBitSet
   }
 
-  def generateSyncMsgsWithBitSet(bitSet: BitSet,
-      useSrc: Boolean = true, useDst: Boolean = true)
+  def generateSyncMsgsWithInit(useSrc: Boolean = true, useDst: Boolean = true)
   : Iterator[(Int, LocalMessageBlock[VD])] = {
+
     Iterator.tabulate(numPartitions) { pid =>
       val msgSize = routingTable.partitionSize(pid)
       val mirrorVids = new PrimitiveVector[Int](msgSize)
       val mirrorAttrs = new PrimitiveVector[VD](msgSize)
       var i = 0
 
-      routingTable.foreachWithPartition(pid, useSrc, useDst) {v =>
-        if (bitSet.get (v._1)) {
+      // update all the dsts
+      routingTable.foreachWithPartition(pid, false, useDst) {v =>
+          // println ("Sync Messages: " + (pid, local2global (v._1), v._2))
+          mirrorVids += v._2
+          mirrorAttrs += masterAttrs (v._1)
+          i += 1
+      }
+
+      // only update active srcs
+      routingTable.foreachWithPartition(pid, true, false) {v =>
+        if (activeSet.get (v._1)) {
           // println ("Sync Messages: " + (pid, local2global (v._1), v._2))
           mirrorVids += v._2
           mirrorAttrs += masterAttrs (v._1)
@@ -411,7 +446,6 @@ class GraphPartition[
       val mirrorVids = new PrimitiveVector[Int](msgSize)
       val mirrorAttrs = new PrimitiveVector[VD](msgSize)
       var i = 0
-
         routingTable.foreachWithPartition(pid, useSrc, useDst) {v =>
           if (activeSet.get (v._1)) {
             // println ("Sync Messages: " + (pid, local2global (v._1), v._2))
@@ -504,7 +538,7 @@ class GraphPartition[
     val aggregates = new Array[A](local2global.length)
     val bitset = new BitSet(local2global.length)
 
-    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset, numPartitions)
+    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset)
 
     var pos = activeSet.nextSetBit(indexStartPos)
     while (pos >= indexStartPos && (pos < largeDegreeMirrorEndPos)) {
@@ -540,6 +574,9 @@ class GraphPartition[
     val newMask = new BitSet(masterSize)
     val finalMsgs = new Array[A](masterSize)
 
+    var totalMsgNums = 0
+    val noDupMsgs = new Array[Int](masterSize)
+
     msgs.foreach { msg =>
       val vid = msg._1
       val value = msg._2
@@ -552,9 +589,11 @@ class GraphPartition[
           newMask.set(pos)
           finalMsgs(pos) = value
         }
+        noDupMsgs(pos) += 1
+        totalMsgNums += 1
       }
     }
-    new LocalFinalMessages(finalMsgs, newMask)
+    new LocalFinalMessages(finalMsgs, newMask, totalMsgNums, noDupMsgs)
   }
 
   // get all the push messages and mirror messages
@@ -571,7 +610,7 @@ class GraphPartition[
     // only need to generate local messages for masters
     val newMask = new BitSet(masterSize)
     val finalMsgs = new Array[A](masterSize)
-    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, finalMsgs, newMask, numPartitions)
+    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, finalMsgs, newMask)
 
     val mirrorActiveSet = new BitSet(largeDegreeMirrorEndPos - largeDegreeMasterEndPos)
 
@@ -579,10 +618,13 @@ class GraphPartition[
     var mirrorMsgCount = 0
     var localMirrorMsgCount = 0
 
-    // val time1 = System.currentTimeMillis()
+    val time1 = System.currentTimeMillis()
     val mixMsgs = msgs.map(_._2)
 
-    val time1 = System.currentTimeMillis()
+    var totalMsgNums = 0
+    val noDupMsgs = new Array[Int](masterSize)
+
+    // val time1 = System.currentTimeMillis()
     mixMsgs.foreach { msgs =>
       val pushMsgs = msgs.msgIterator
       val mirrorMsgs = msgs.syncIterator
@@ -600,6 +642,8 @@ class GraphPartition[
             newMask.set(pos)
             finalMsgs(pos) = value
           }
+          noDupMsgs(pos) += 1
+          totalMsgNums += 1
         }
       }
 
@@ -610,7 +654,7 @@ class GraphPartition[
       }
     }
 
-    val time2 = System.currentTimeMillis()
+    // val time2 = System.currentTimeMillis()
     // println("push msg time: " + (time2 - time1))
 
     // handle all the LDmirrors, including the mixMasters
@@ -638,6 +682,8 @@ class GraphPartition[
         ctx.set(srcId, local2global(localDstId),
           mirrorLVid, localDstId, value, dstAttr, edgeAttr)
         mirrorMsgCount += 1
+        noDupMsgs(localDstId) += 1
+        totalMsgNums += 1
         // println(localId, localDstIds(i), edgeAttr)
         sendMsg (ctx)
       }
@@ -645,10 +691,10 @@ class GraphPartition[
       pos = mirrorActiveSet.nextSetBit(pos + 1)
     }
 
-    val time3 = System.currentTimeMillis()
+    // val time3 = System.currentTimeMillis()
     // println("mirror sync time: " + (time3 - time2))
 
-    new LocalFinalMessages(finalMsgs, newMask)
+    new LocalFinalMessages(finalMsgs, newMask, totalMsgNums, noDupMsgs)
 
     /*
     // to make sure memory can be collected as soon as msgs are processed
@@ -867,7 +913,7 @@ class GraphPartition[
     val aggregates = new Array[A](local2global.length)
     val bitset = new BitSet (local2global.length)
 
-    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset, numPartitions)
+    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset)
 
     for (i <- 0 until vertexIndex.size - 1) {
       // val clusterPos = vertexIndex (i)
@@ -893,7 +939,7 @@ class GraphPartition[
         }
 
         // println("srcAttr: " + srcAttr)
-        ctx.setSrcOnly (local2global (clusterLocalSrcId), clusterLocalSrcId, srcAttr)
+        // ctx.setSrcOnly (local2global (clusterLocalSrcId), clusterLocalSrcId, srcAttr)
         for (i <- startPos until endPos) {
           val localDstId = localDstIds (i)
           val dstId = local2global (localDstId)
@@ -938,7 +984,7 @@ class GraphPartition[
     val aggregates = new Array[A](local2global.length)
     val bitset = new BitSet(local2global.length)
 
-    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset, numPartitions)
+    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset)
 
     var pos = activeSet.nextSetBit(indexStartPos)
     while (pos >= indexStartPos && (pos < vertexIndex.size + indexStartPos - 1)) {
@@ -975,7 +1021,7 @@ class GraphPartition[
     var ldVertices = 0
     val startPushTime = System.currentTimeMillis()
 
-    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset, numPartitions)
+    val ctx = new AggregatingVertexContext[VD, ED, A](mergeMsg, aggregates, bitset)
     // first generate the push msgs, only for smallDegreeVertices
     // which are out-completed
     var pos = activeSet.nextSetBit(indexStartPos)
@@ -1043,31 +1089,33 @@ class GraphPartition[
 
       // var mirrorVids = new PrimitiveVector[Int]
       // var mirrorAttrs = new PrimitiveVector[VD]
+
       val msgs = Iterator.tabulate(numPartitions) { pid =>
-        val mirrorVids = new PrimitiveVector[Int]
-        val mirrorAttrs = new PrimitiveVector[VD]
-        // val mirrorMsgs = new PrimitiveVector[(Int,VD)](routingTable.partitionSize(pid))
+          val mirrorVids = new PrimitiveVector[Int]
+          val mirrorAttrs = new PrimitiveVector[VD]
+          // val mirrorMsgs = new PrimitiveVector[(Int,VD)](routingTable.partitionSize(pid))
 
-        routingTable.foreachWithPartition(pid, true, false) { vid =>
-          if (activeSet.get (vid._1)) {
-            ldVertices += 1
-            // determine whether this ldmaster is active or not
-            mirrorVids += vid._2
-            mirrorAttrs += masterAttrs (vid._1)
-            // mirrorMsgs += (vid._2, masterAttrs(vid._1))
+
+          routingTable.foreachWithPartition(pid, true, false) { vid =>
+            if (activeSet.get (vid._1)) {
+              ldVertices += 1
+              // determine whether this ldmaster is active or not
+              mirrorVids += vid._2
+              mirrorAttrs += masterAttrs (vid._1)
+              // mirrorMsgs += (vid._2, masterAttrs(vid._1))
+            }
           }
-        }
 
-        // (pid, (new LocalMessageBlock(mirrorVids.trim().array, mirrorAttrs.trim().array),
-        //   new MessageBlock(pushVids(pid).trim().array, pushMsgs(pid).trim().array)))
+          // (pid, (new LocalMessageBlock(mirrorVids.trim().array, mirrorAttrs.trim().array),
+          //   new MessageBlock(pushVids(pid).trim().array, pushMsgs(pid).trim().array)))
 
-        (pid, new MixMessageBlock(
+          (pid, new MixMessageBlock(
             mirrorVids.trim().toArray,
             mirrorAttrs.trim().toArray,
             pushVids(pid).trim().toArray,
             pushMsgs(pid).trim().toArray))
+        }
         // (pid, new MixMessageBlock(mirrorMsgs.iterator, pushMsgs(pid).iterator))
-      }
 
       // println(s"ldVertices: $ldVertices, sdVertices: $sdVertices")
       msgs
@@ -1076,30 +1124,30 @@ class GraphPartition[
 
   def withNewValues(newValues: Array[VD]): GraphPartition[VD, ED] = {
     new GraphPartition[VD, ED](localDstIds, newValues, mirrorAttrs,
-      vertexIndex, edgeAttrs, global2local, local2global, indexStartPos,
+      vertexIndex, edgeAttrs, global2local, local2global, masterEdgeNum, indexStartPos,
       smallDegreeEndPos, largeDegreeMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, routingTable, activeSet)
+      routingTable, activeSet)
   }
 
   def withMirrorValues(newValues: Array[VD]): GraphPartition[VD, ED] = {
     new GraphPartition[VD, ED](localDstIds, masterAttrs, newValues,
-      vertexIndex, edgeAttrs, global2local, local2global, indexStartPos,
+      vertexIndex, edgeAttrs, global2local, local2global, masterEdgeNum, indexStartPos,
       smallDegreeEndPos, largeDegreeMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, routingTable, activeSet)
+      routingTable, activeSet)
   }
 
   def withActiveSet(newActiveSet: BitSet): GraphPartition[VD, ED] = {
     new GraphPartition[VD, ED](localDstIds, masterAttrs, mirrorAttrs,
-      vertexIndex, edgeAttrs, global2local, local2global, indexStartPos,
+      vertexIndex, edgeAttrs, global2local, local2global, masterEdgeNum, indexStartPos,
       smallDegreeEndPos, largeDegreeMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, routingTable, newActiveSet)
+      routingTable, newActiveSet)
   }
 
   def withRoutingTable(newRoutingTable: RoutingTable): GraphPartition[VD, ED] = {
     new GraphPartition[VD, ED](localDstIds, masterAttrs, mirrorAttrs,
-      vertexIndex, edgeAttrs, global2local, local2global, indexStartPos,
+      vertexIndex, edgeAttrs, global2local, local2global, masterEdgeNum, indexStartPos,
       smallDegreeEndPos, largeDegreeMirrorEndPos, largeDegreeMasterEndPos,
-      numPartitions, newRoutingTable, activeSet)
+      newRoutingTable, activeSet)
   }
 }
 
@@ -1109,7 +1157,6 @@ private class AggregatingVertexContext[VD, ED, A](
     mergeMsg: (A, A) => A,
     aggregates: Array[A],
     bitset: BitSet,
-    numPartitions: Int,
     direction: EdgeDirection = EdgeDirection.Out) extends VertexContext[VD, ED, A](direction) {
 
   private[this] var _srcId: VertexId = _
