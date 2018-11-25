@@ -61,7 +61,7 @@ class PregelSuite extends SparkFunSuite with LocalSparkContext {
           v.foreachEdgePartition((vid, e) => println(vid + " " + e))
         }
         */
-        println ("Active masters: " + iniGraph.getActiveNums)
+        // println ("Active masters: " + iniGraph.getActiveNums)
         // iniGraph.count()
 
         val newGraph = iniGraph.activateAllMasters
